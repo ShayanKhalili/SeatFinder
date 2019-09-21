@@ -5,6 +5,11 @@ camera = PiCamera()
 
 camera.start_preview()
 try:
+	i = 0
 	while(True):
-		camera.capture('.?
+		sleep(5)
+		camera.capture('{0}.jpg'.format(i))
+		i+= 1
+except KeyboardInterrupt:
+	pass
 camera.stop_preview()
